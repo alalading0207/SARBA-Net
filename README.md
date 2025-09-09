@@ -6,7 +6,7 @@ This repository provides the **main code section** of our paper:
 
 ## Introduction
 
-Our research is dedicated to exploring **impervious surface (IS) extraction solely from SAR imagery**, aiming to achieve **clear-boundary IS segmentation** even under cloudy or rainy conditions when optical data are unavailable.  
+Our research is dedicated to exploring **impervious surface (IS) extraction solely from SAR imagery**, aiming to achieve **IS extraction with clear boundary** even under cloudy or rainy conditions when optical data are unavailable.  
 
 The core idea of **SARBA-Net** is to **leverage boundary perception** to guide deep learning models in recognizing impervious surfaces.
 
