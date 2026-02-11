@@ -25,13 +25,11 @@ The key contributions of this work include two boundary-aware loss functions:
 
 ## Installation
 
-Clone the repository and install dependencies:
+Install dependencies:
 
 ```bash
-git clone <your-repository-link>
-cd SARBA-Net
 pip install -r requirements.txt
-
+```
 ---
 
 ## Data Preparation
@@ -45,10 +43,51 @@ Download from:
 
 Note:
 
-- The original WHU-OPT-SAR images are very large.
-- We provide cropping scripts to preprocess the dataset.
+- The original WHU-OPT-SAR images are very large.- We provide cropping scripts to preprocess the dataset.
 
 Cropping script location:
 
 
-### 1. Download Datasets
+### 2. Dataset Organization
+
+```bash
+dataset_root/
+│
+├── whusar/
+│ ├── image/
+│ ├── label/
+│
+├── sarbud/
+│ ├── image/
+│ ├── label/
+```
+
+### 3. Dataset Split Files
+
+Training, validation, and testing samples are defined in: './SARBA-Net/lib/name_list/'
+Example:
+```bash
+whusar/train.txt
+whusar/val.txt
+whusar/test.txt
+```
+The SARBud dataset follows the same structure.
+
+---
+
+## Training and Testing
+
+Run the following command to train the model:
+```bash
+bash scripts/sarbud/resnet38/run_wr_be_bc.sh train <experiment_name>
+```
+
+Run the following command to iference the model:
+```bash
+bash scripts/sarbud/resnet38/run_wr_be_bc.sh test_max <experiment_name>
+```
+<experiment_name> is used to distinguish different training runs and to store checkpoints and logs
+
+
+
+
