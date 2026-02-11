@@ -1,0 +1,97 @@
+{
+    "dataset": "sarbud",
+    "method": "segmentor",
+    "data": {
+      "image_tool": "cv2",
+      "input_mode": "single",
+      "num_classes": 1,
+      "data_dir": "/gemini/data-1",
+      "workers": 8
+    },
+   "train": {
+      "batch_size": 16
+    },
+    "val": {
+      "batch_size": 16
+    },
+    "test": {
+      "batch_size": 16,
+      "out_dir": "/gemini/code/boundary_aware/seg_results/sarbud/"
+    },
+    "normalize": {
+      "div_value": 255.0,
+      "mean": [0.5],
+      "std": [0.5]
+    },
+    "checkpoints": {
+      "checkpoints_name": "resnet38",
+      "checkpoints_dir": "./checkpoints/resnet38_be",
+      "save_epoch": 1
+    },
+    "network":{
+      "multi_grid": [1, 1, 1],
+      "model_name": "resnet38_be",
+      "bn_type": "torchbn",
+      "stride": 8,
+      "factors": [[8, 8]]
+    },
+    "logging": {
+      "logfile_level": "info",
+      "stdout_level": "info",
+      "log_file": "./log/sarbud/resnet38_be.log",
+      "log_format": "%(asctime)s %(levelname)-7s %(message)s",
+      "rewrite": true
+    },
+    "lr": {
+      "base_lr": 5e-4,
+      "metric": "epoch",
+      "lr_policy": "step",
+      "step": {
+        "gamma": 0.98,
+        "step_size": 1
+      }
+    },
+    "solver": {
+      "display_iter": 20,  
+      "max_epoch": 100
+    },
+    "optim": {
+      "optim_method": "adam",
+      "adam": {
+        "betas": [0.9, 0.999],
+        "eps": 1e-08,
+        "weight_decay": 0.0001
+      },
+      "sgd": {
+        "weight_decay": 0.0005,
+        "momentum": 0.9,
+        "nesterov": false
+      }
+    },
+    "loss": {
+      "loss_type": "dice_loss",
+      "params": {
+        "ce_reduction": "mean"
+      }
+    },
+    "metric":["acc", "f1", "iou", "kappa"],
+    "boundary":{
+      "use_be": true,
+      "use_bc": false,
+      "use_be_bc": false,
+      "resolution":[4,8],
+      "cbl_weight": 0.03,
+      "bce_weight": 0.3,
+      "con_weight": 1
+    },
+    "use_be":{
+      "temperature": 1.0,
+      "kernel_size": 3,
+      "prob": 1.0,
+      "hard_prob": 0.5,
+      "use_kl":false
+    },
+    "use_bc":{
+      "hollow":true
+    }
+}
