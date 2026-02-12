@@ -43,10 +43,11 @@ Download from:
 
 Note:
 
-- The original WHU-OPT-SAR is multi-class and has a large image size. We provide a category merging script and a cropping script to preprocess the dataset.
+- The original WHU-OPT-SAR is multi-class and has a large image size. We provide a category merging script and a cropping script to preprocess the dataset.Cropping script location: 
 
-Cropping script location: lib/datasets/process
-
+```bash
+lib/datasets/process
+```
 
 ### 2. Dataset Organization
 
@@ -64,7 +65,7 @@ dataset_root/
 
 ### 3. Dataset Split Files
 
-Training, validation, and testing samples are defined in: './SARBA-Net/lib/name_list/'
+Training, validation, and testing samples are defined in: 'lib/name_list'
 Example:
 ```bash
 whusar/train.txt
