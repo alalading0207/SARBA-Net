@@ -1,5 +1,5 @@
 # SARBA-Net
-This repository provides the official implementation of our paper:
+This repository provides the implementation of our paper:
 **"SARBA-Net: A Boundary Awareness Network for Impervious Surface Extraction of SAR Images"**
 
 ---
@@ -43,9 +43,9 @@ Download from:
 
 Note:
 
-- The original WHU-OPT-SAR images are very large.- We provide cropping scripts to preprocess the dataset.
+- The original WHU-OPT-SAR is multi-class and has a large image size. We provide a category merging script and a cropping script to preprocess the dataset.
 
-Cropping script location:
+Cropping script location: lib/datasets/process
 
 
 ### 2. Dataset Organization
