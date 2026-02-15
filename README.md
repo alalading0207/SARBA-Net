@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ### 1. Download Datasets
 The two publicly available datasets used in this study:
 
-#### SARBud Dataset
+#### SARBuD Dataset
 Download from: https://github.com/CAESAR-Radi/SARBuD
 
 #### WHU-OPT-SAR Dataset
