@@ -14,10 +14,12 @@ The core idea of **SARBA-Net** is to **leverage boundary perception** to guide d
 
 ## Method Highlights
 
-The key contributions of this work include two boundary-aware loss functions:
+The key contributions of this work include two boundary-aware loss functions and two boundary-preserving structures:
 
 - **Boundary Contrast Loss (BCL)**  
-- **Boundary Consistency Auxiliary Loss (BCAL)**  
+- **Boundary Consistency Auxiliary Loss (BCAL)**
+- **Boundary Awareness and Enhancement Module (BAEM)**  
+- **Boundary Preserving Structure (BPS)**
 
 📌 Files containing `be_bc` correspond to the implementation of the proposed SARBA-Net.
 
@@ -34,12 +36,13 @@ pip install -r requirements.txt
 
 ## Data Preparation
 ### 1. Download Datasets
+The two publicly available datasets used in this study:
 
 #### SARBud Dataset
-Download from:
+Download from: https://github.com/CAESAR-Radi/SARBuD
 
 #### WHU-OPT-SAR Dataset
-Download from:
+Download from: https://github.com/AmberHen/WHU-OPT-SAR-dataset.git
 
 Note:
 
